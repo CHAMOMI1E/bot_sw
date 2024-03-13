@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "bot-for-father"
+version = "0.1.0"
+description = ""
+authors = ["CHAMOMILE <CHAMOM2LES@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiogram = "^3.4.1"
+sqlalchemy = "^2.0.28"
+asyncpg = "^0.29.0"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.poe.tasks]
+start-bot = "python server.py"

@@ -1,6 +1,6 @@
 import functools
 import inspect
-from typing_extensions import Any, Callable, Literal, Tuple, TypeVar
+from typing import Any, Callable, Literal, Tuple, TypeVar
 
 from aiogram.types import InlineKeyboardMarkup, ReplyKeyboardMarkup
 from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
@@ -8,7 +8,6 @@ from aiogram.utils.keyboard import InlineKeyboardBuilder, ReplyKeyboardBuilder
 F = TypeVar("F", bound=Callable[..., Any])
 
 
-# декоратор собственного производства для создания клавиатуры, инструкции будут описаны лично
 def kb_wrap(
         keyboard_type: Literal["reply", "inline"] = "inline",
         adjust_keyboard: int | Tuple[int] = 1,

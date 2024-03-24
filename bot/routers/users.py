@@ -10,6 +10,9 @@ user_router = Router()
 async def cmd_start(message: types.Message):
     user = await get_user_by_id_tg(message.from_user.id)
     if user:
-        pass
+        await message.answer("Вы находитесь в главном меню")
     else:
-        pass
+        await message.answer(
+            f"Здравствуйте {message.from_user.username}! \n"
+            f"Этот бот создан для вашей связь с нами, а так же посмотреть работы.\n"
+            f"Вы сейчас находитесь в главном меню")

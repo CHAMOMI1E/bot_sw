@@ -35,10 +35,4 @@ class Users(Base):
     created_at: Mapped[datetime] = mapped_column(default=datetime.now(), nullable=False)
 
 
-# class Posts(Base):
-#     __tablename__ = "posts"
-#
-#     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
-#     photo_before
-#     photo_after
 

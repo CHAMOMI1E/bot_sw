@@ -13,6 +13,6 @@ async def cmd_start(message: types.Message):
         await message.answer("Вы находитесь в главном меню")
     else:
         await message.answer(
-            f"Здравствуйте {message.from_user.username}! \n"
+            f"Здравствуйте {message.from_user.first_name}! \n"
             f"Этот бот создан для вашей связь с нами, а так же посмотреть работы.\n"
             f"Вы сейчас находитесь в главном меню")

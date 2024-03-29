@@ -5,7 +5,7 @@ import sys
 from aiogram import Bot, Dispatcher
 from aiogram.enums import ParseMode
 from settings.config import TOKEN_BOT
-from bot.routers.users import user_router
+from bot.routers.users_router import user_router
 
 bot = Bot(TOKEN_BOT, parse_mode=ParseMode.HTML)
 dp = Dispatcher()

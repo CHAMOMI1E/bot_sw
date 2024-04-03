@@ -8,6 +8,8 @@ from bot.decorators.dec_for_kb import kb_wrap
 def main_menu_kb(builder: InlineKeyboardBuilder) -> InlineKeyboardMarkup:
     ReplyKeyboardRemove()
     builder.button(text='Заказать звонок', callback_data='request-a-call')
+    builder.button(text='О нас', callback_data='about-us')
+    builder.button(text='Посмотреть работы', callback_data='show-group')
 
 
 @kb_wrap(keyboard_type='reply', adjust_keyboard=(1,), one_time_keyboard=True)
@@ -18,5 +20,3 @@ def request_a_call_kb(builder: ReplyKeyboardBuilder) -> ReplyKeyboardMarkup:
 @kb_wrap(keyboard_type="inline", adjust_keyboard=1)
 def back_to_menu_kb(builder: InlineKeyboardBuilder) -> InlineKeyboardMarkup:
     builder.button(text="← Вернуться в главное меню", callback_data="back-to-menu")
-
-

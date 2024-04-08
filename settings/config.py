@@ -1,9 +1,7 @@
 from dotenv import load_dotenv
 import os
 
-
 load_dotenv()
-
 
 TOKEN_DB = os.getenv('TOKEN_DB')
 

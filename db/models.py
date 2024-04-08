@@ -19,12 +19,10 @@ class Base(DeclarativeBase):
     pass
 
 
-class Marks(Enum):
-    ONE: int = 1
-    TWO: int = 2
-    THREE: int = 3
-    FOUR: int = 4
-    FIVE: int = 5
+class Roles(Enum):
+    USER: str = 'USER'
+    ADMIN: str = 'ADMIN'
+    DEVELOPER: str = 'DEVELOPER'
 
 
 class Users(Base):
@@ -32,6 +30,7 @@ class Users(Base):
 
     id: Mapped[int] = mapped_column(primary_key=True, autoincrement=True)
     id_tg: Mapped[bigint] = mapped_column(BigInteger)
+    role: Mapped[str]
     created_at: Mapped[datetime] = mapped_column(default=datetime.now(), nullable=False)
 
 

@@ -1,14 +1,14 @@
-from app.db.models import Accounts, async_session, Status
+from db.models import async_session, Roles, Users
 from sqlalchemy import select
 
 
-async def search_admin(id_tg) -> Accounts or None:
+async def search_admin(id_tg) -> Users or None:
     async with async_session() as session:
         try:
             blocks = await session.execute(
-                select(Accounts)
-                .where(Accounts.status.in_([Status.ADMIN.value, Status.SUPER_ADMIN.value, Status.DEVELOPER.value]))
-                .where(Accounts.id_tg == id_tg)
+                select(Users)
+                .where(Users.role.in_([Roles.ADMIN.value, Roles.DEVELOPER.value]))
+                .where(Users.id_tg == id_tg)
             )
             return blocks.scalars().first()
         except Exception as e:

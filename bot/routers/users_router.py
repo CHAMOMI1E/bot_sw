@@ -36,7 +36,7 @@ async def requests_a_call(call: types.CallbackQuery, state: FSMContext):
 @user_router.message(PhoneRequest.phone)
 async def request_text(message: types.Message, state: FSMContext):
     if message.text:
-        await state.update_data(phone=message.text)
+        await state.update_data(phone=message.text.replace('+', ''))
     else:
         await state.update_data(phone=message.contact.phone_number.replace('+', ''))
     data = await state.get_data()
